@@ -11,4 +11,9 @@ The key business question he wants you to help him answer are the following:
 - Which platform, region, segment and customer types were the most impacted by this change?
 - What can we do about future introduction of similar sustainability updates to the business to minimise impact on sales?
 
+''' SELECT region,year,to_char(week_date,'month') as month ,SUM(sales)
+FROM clean_weekly_sales
+GROUP BY region,year,month
+ORDER BY region ,year, to_date(to_char(week_date,'month'),'month') '''
   
+    
